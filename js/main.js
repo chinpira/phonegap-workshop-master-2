@@ -29,7 +29,7 @@ var app = {
                     "</div>";
         $('body').html(html);
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
-    }
+    },
 
     initialize: function() {
         var self = this;
