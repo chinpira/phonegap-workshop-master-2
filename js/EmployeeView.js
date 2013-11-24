@@ -6,7 +6,7 @@ var EmployeeView = function(employee) {
 
 	this.render = function() {
 		this.el.html(EmployeeView.template(employee));
-		return;
+		return this;
 	};
 
 	this.initialize();
