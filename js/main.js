@@ -31,20 +31,23 @@ var app = {
         }
 
         $(window).on('hashchange', $.proxy(this.route, this));
-
     },
 
     route: function() {
         var hash = window.location.hash;
+        console.log('Routing: ' + hash);
         if (!hash) {
             $('body').html(new HomeView(this.store).render().el);
             return;
         }
         var match = hash.match(app.detailsURL);
         if (match) {
+            console.log('Matched: ' + hash);
+            console.log(Number(match[1]));
             this.store.findById(Number(match[1]), function(employee) {
                 $('body').html(new EmployeeView(employee).render().el);
             });
+                console.log($('body').html());
         }
     },
 
