@@ -14,7 +14,7 @@ var EmployeeView = function(employee) {
 
 	var options = {
 		timeout: 31000,
-		enableHighAccuracy: true;
+		enableHighAccuracy: true,
 		maximumAge: 90000;
 	};
 
