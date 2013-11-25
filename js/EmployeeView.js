@@ -15,6 +15,11 @@ var EmployeeView = function(employee) {
 		event.preventDefault();
 		console.log('addLocation');
 		console.log(navigator);
+		var options = {
+			timeout: 31000,
+			enableHighAccuracy: true,
+			maximumAge: 90000
+		};
 		navigator.geolocation.getCurrentPosition(
 			function(position) {
 				console.log(position);
@@ -22,7 +27,8 @@ var EmployeeView = function(employee) {
 			},
 			function() {
 				alert('Error getting location');
-			});
+			},
+			options);
 		return false;
 	};
 
