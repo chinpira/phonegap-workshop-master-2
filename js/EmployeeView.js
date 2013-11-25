@@ -11,6 +11,13 @@ var EmployeeView = function(employee) {
 		return this;
 	};
 
+
+	var options = {
+		timeout: 31000,
+		enableHighAccuracy: true;
+		maximumAge: 90000;
+	};
+
 	this.addLocation = function(event) {
 		event.preventDefault();
 		console.log('addLocation');
@@ -22,7 +29,8 @@ var EmployeeView = function(employee) {
 			},
 			function() {
 				alert('Error getting location');
-			});
+			},
+			options);
 		return false;
 	};
 
